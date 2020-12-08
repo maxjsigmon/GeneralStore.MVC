@@ -24,28 +24,29 @@
         <th>
             @Html.DisplayNameFor(model => model.IsFood)
         </th>
+        <th>Actions</th>
     </tr>
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.InventoryCount)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Price)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.IsFood)
-    </td>
-    <td>
-        @Html.ActionLink("Change", "Edit", new { id = item.ProductID }) |
-        @Html.ActionLink("More Info", "Details", new { id = item.ProductID }) |
-        @Html.ActionLink("Remove", "Delete", new { id = item.ProductID })
-    </td>
-</tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InventoryCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsFood)
+            </td>
+            <td>
+                @Html.ActionLink("Change", "Edit", new { id = item.ProductID }) |
+                @Html.ActionLink("More Info", "Details", new { id = item.ProductID }) |
+                @Html.ActionLink("Remove", "Delete", new { id = item.ProductID })
+            </td>
+        </tr>
     }
 </table>
 

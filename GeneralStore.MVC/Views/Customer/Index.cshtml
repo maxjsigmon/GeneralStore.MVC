@@ -1,0 +1,39 @@
+﻿@model IEnumerable<GeneralStore.MVC.Models.Customer>
+
+@{
+    ViewBag.Title = "Customer";
+}
+
+<h2>Customers</h2>
+
+<p>
+    @Html.ActionLink("Add a Customer", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var person in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelPerson => person.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelPerson => person.LastName)
+            </td>
+            <td>
+                @Html.ActionLink("Change", "Edit", new { id = person.CustomerID }) |
+                @Html.ActionLink("More Info", "Details", new { id = person.CustomerID }) |
+                @Html.ActionLink("Remove", "Delete", new { id = person.CustomerID })
+            </td>
+        </tr>
+    }
+</table>
